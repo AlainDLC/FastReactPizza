@@ -56,13 +56,13 @@ function CreateOrder() {
       <Form method="POST" action="/order/new">
         <div>
           <label>First Name</label>
-          <input type="text" name="customer" required />
+          <input type="text" name="customer" required className="input" />
         </div>
 
         <div>
           <label>Phone number</label>
           <div>
-            <input type="tel" name="phone" required />
+            <input type="tel" name="phone" required className="input" />
           </div>
           {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
@@ -70,7 +70,7 @@ function CreateOrder() {
         <div>
           <label>Address</label>
           <div>
-            <input type="text" name="address" required />
+            <input type="text" name="address" required className="input" />
           </div>
         </div>
 
@@ -81,13 +81,28 @@ function CreateOrder() {
             id="priority"
             value={withPriority}
             onChange={(e) => setWithPriority(e.target.checked)}
+            className="h-6 w-6 accent-indigo-400"
           />
           <label htmlFor="priority">Want to yo give your order priority?</label>
         </div>
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={isSubmitting}>
+          <button
+            disabled={isSubmitting}
+            className="shadow-sm tracking-wide
+             rounded-full uppercase py-3 px-4 
+             text-slate-700 bg-gradient-to-r
+              from-indigo-500 via-purple-500
+               to-pink-400 font-serif border-b
+                border-blue-100 inline-block
+                 hover:text-pink-200 
+                 transition-colors
+                  duration-800 
+                  focus:outline-none 
+                  focus:ring focus:ring-pink-400 
+                  focus:ring-offset-2"
+          >
             {isSubmitting ? "Place order.." : "Order now"}
           </button>
         </div>
