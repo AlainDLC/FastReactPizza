@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: "Playwrite CU ",
+    },
+
+    extend: {
+      height: {
+        screen: "100dvh",
+      },
+    },
   },
   plugins: [],
 };
