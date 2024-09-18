@@ -46,11 +46,7 @@ export default function Button({ children, disabled, to, type, onClick }) {
     );
 
   return (
-    <button
-      // Sprid alla props för att ärva standard button-egenskaper
-      type="button" // Standardvärdet, kan överskrivas via props
-      className={styles[type]}
-    >
+    <button disabled={disabled} className={styles[type]}>
       {children}
     </button>
   );
